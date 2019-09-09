@@ -25,8 +25,22 @@ public class X5WebView extends WebView {
 			view.loadUrl(url);
 			return true;
 		}
-	};
 
+		@Override
+		public void onPageFinished(WebView webView, String s) {
+			super.onPageFinished(webView, s);
+			imgReset(webView);
+		}
+	};
+	private void imgReset(WebView webView) {
+		webView.loadUrl("javascript:(function(){"
+				+ "var objs = document.getElementsByTagName('img'); "
+				+ "for(var i=0;i<objs.length;i++)  " + "{"
+				+ "var img = objs[i];   "
+				+ "    img.style.width = '100%';   "
+				+ "    img.style.height = 'auto';   "
+				+ "}" + "})()");
+	}
 	@SuppressLint("SetJavaScriptEnabled")
 	public X5WebView(Context arg0, AttributeSet arg1) {
 		super(arg0, arg1);
@@ -42,27 +56,37 @@ public class X5WebView extends WebView {
 		webSetting.setJavaScriptEnabled(true);
 		webSetting.setJavaScriptCanOpenWindowsAutomatically(true);
 		webSetting.setAllowFileAccess(true);
-		webSetting.setLayoutAlgorithm(LayoutAlgorithm.NARROW_COLUMNS);
+		webSetting.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
 		webSetting.setSupportZoom(true);
 		webSetting.setBuiltInZoomControls(true);
-		webSetting.setUseWideViewPort(true);
+		// 设置字体大小，默认代销16
+//		webSetting.setDefaultFontSize(66);
+//		webSetting.setMinimumFontSize(20);
+		//设置字体
+//		webSetting.setTagFontFamily("p");
+//		webSetting.setTagFontFamily("span");
+//		//设置字体大小
+//		webSetting.setFontSize(6);
+		// 排版适应屏幕
+		webSetting.setLayoutAlgorithm(com.tencent.smtt.sdk.WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+		//将图片调整到适合webview的大小
+		webSetting.setUseWideViewPort(true); // 设置屏幕自适应
+		// 缩放至屏幕的大小
+		webSetting.setLoadWithOverviewMode(true);
 		webSetting.setSupportMultipleWindows(true);
 		// webSetting.setLoadWithOverviewMode(true);
 		webSetting.setAppCacheEnabled(true);
 		// webSetting.setDatabaseEnabled(true);
-		webSetting.setDomStorageEnabled(true);
+		webSetting.setDomStorageEnabled(true); // 使用localStorage
 		webSetting.setGeolocationEnabled(true);
 		webSetting.setAppCacheMaxSize(Long.MAX_VALUE);
 		// webSetting.setPageCacheCapacity(IX5WebSettings.DEFAULT_CACHE_CAPACITY);
 		webSetting.setPluginState(WebSettings.PluginState.ON_DEMAND);
 		// webSetting.setRenderPriority(WebSettings.RenderPriority.HIGH);
 		webSetting.setCacheMode(WebSettings.LOAD_NO_CACHE);
-
-		// this.getSettingsExtension().setPageCacheCapacity(IX5WebSettings.DEFAULT_CACHE_CAPACITY);//extension
-		// settings 的设计
 	}
 
-	@Override
+/*	@Override
 	protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
 		boolean ret = super.drawChild(canvas, child, drawingTime);
 		canvas.save();
@@ -85,7 +109,7 @@ public class X5WebView extends WebView {
 		canvas.drawText(Build.MODEL, 10, 200, paint);
 		canvas.restore();
 		return ret;
-	}
+	}*/
 
 	public X5WebView(Context arg0) {
 		super(arg0);

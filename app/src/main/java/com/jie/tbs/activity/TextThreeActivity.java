@@ -20,6 +20,9 @@ import com.zhouyou.http.exception.ApiException;
 import java.io.File;
 import java.util.regex.Pattern;
 
+/**
+ * 先下载文件再浏览
+ */
 public class TextThreeActivity extends AppCompatActivity implements TbsReaderView.ReaderCallback {
 
     //private String mFileUrl = "https://finance-item-test.oss-cn-hangzhou.aliyuncs.com/phoenix/2019/08/21/acd02910703543d4b29f50c7d22abaa02019%E5%8A%B3%E5%8A%A8%E5%90%88%E5%90%8C%E8%8C%83%E6%96%87.docx";

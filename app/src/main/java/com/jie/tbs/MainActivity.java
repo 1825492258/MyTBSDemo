@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.jie.tbs.activity.TextOneActivity;
+import com.jie.tbs.activity.TextOnesActivity;
 import com.jie.tbs.activity.TextThreeActivity;
 import com.jie.tbs.activity.TextTwoActivity;
 import com.jie.tbs.player.TextPlayerActivity;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this,TextThreeActivity.class));
                 break;
             case R.id.btnFour:
+                startActivity(new Intent(this, TextOnesActivity.class));
                 break;
             case R.id.btnFive:
                 startActivity(new Intent(this,TextPlayerActivity.class));

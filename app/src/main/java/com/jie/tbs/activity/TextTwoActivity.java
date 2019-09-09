@@ -19,6 +19,9 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.HashMap;
 
+/**
+ * 先下载文件 再浏览
+ */
 public class TextTwoActivity extends AppCompatActivity implements ValueCallback<String> {
     private String text = "/storage/emulated/0/Android/data/cn.phoenix.ibank/files/19_PDF.pdf";
     //private String mFileUrl = "http://www.gov.cn/zhengce/pdfFile/1994_PDF.pdf";
