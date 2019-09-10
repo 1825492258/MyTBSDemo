@@ -41,8 +41,23 @@
 
     <Button
         android:id="@+id/btnFive"
-        android:text="视频播放"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="视频播放" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <Button
+        android:id="@+id/btnBarOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CoordinatorLayout" />
+
+    <Button
+        android:id="@+id/btnBarTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CoordinatorLayout" />
 </LinearLayout>

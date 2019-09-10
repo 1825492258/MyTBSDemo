@@ -18,11 +18,13 @@ import com.zhouyou.http.cache.model.CacheMode;
  * ================================================
  */
 public class App extends Application {
+    private static App sInstance;
     @Override
     public void onCreate() {
         super.onCreate();
         //搜集本地tbs内核信息并上报服务器，服务器返回结果决定使用哪个内核。
         // EasyHttp.init(this);
+        sInstance = this;
         initEasyHttp();
         QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
 
@@ -41,7 +43,15 @@ public class App extends Application {
         //x5内核初始化接口
         QbSdk.initX5Environment(getApplicationContext(),  cb);
     }
-
+    /**
+     * 获得当前app运行的Application
+     */
+    public static App getInstance() {
+        if (sInstance == null) {
+            throw new NullPointerException("please inherit BaseApplication or call setApplication.");
+        }
+        return sInstance;
+    }
     private void initEasyHttp() {
         EasyHttp.init(this);//默认初始化,必须调用
 //        //全局设置请求头

@@ -9,6 +9,8 @@ import com.jie.tbs.activity.TextOneActivity;
 import com.jie.tbs.activity.TextOnesActivity;
 import com.jie.tbs.activity.TextThreeActivity;
 import com.jie.tbs.activity.TextTwoActivity;
+import com.jie.tbs.immersion.BarOneActivity;
+import com.jie.tbs.immersion.BarTwoActivity;
 import com.jie.tbs.player.TextPlayerActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnThree).setOnClickListener(this);
         findViewById(R.id.btnFour).setOnClickListener(this);
         findViewById(R.id.btnFive).setOnClickListener(this);
+
+        findViewById(R.id.btnBarOne).setOnClickListener(this);
+        findViewById(R.id.btnBarTwo).setOnClickListener(this);
     }
 
     @Override
@@ -41,6 +46,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnFive:
                 startActivity(new Intent(this,TextPlayerActivity.class));
+                break;
+            case R.id.btnBarOne:
+                startActivity(new Intent(this, BarOneActivity.class));
+                break;
+            case R.id.btnBarTwo:
+                startActivity(new Intent(this, BarTwoActivity.class));
                 break;
         }
     }
