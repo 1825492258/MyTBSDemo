@@ -10,6 +10,7 @@ import com.jie.tbs.activity.TextOnesActivity;
 import com.jie.tbs.activity.TextThreeActivity;
 import com.jie.tbs.activity.TextTwoActivity;
 import com.jie.tbs.immersion.BarOneActivity;
+import com.jie.tbs.immersion.BarPicActivity;
 import com.jie.tbs.immersion.BarTwoActivity;
 import com.jie.tbs.player.TextPlayerActivity;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btnBarOne).setOnClickListener(this);
         findViewById(R.id.btnBarTwo).setOnClickListener(this);
+        findViewById(R.id.btnBarThree).setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnBarTwo:
                 startActivity(new Intent(this, BarTwoActivity.class));
+                break;
+            case R.id.btnBarThree:
+                startActivity(new Intent(this, BarPicActivity.class));
                 break;
         }
     }

@@ -29,7 +29,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".immersion.BarTwoActivity"></activity>
+        <activity android:name=".immersion.BarPicActivity"></activity>
+        <activity android:name=".immersion.BarTwoActivity" />
         <activity android:name=".immersion.BarOneActivity" /> <!-- 适配全面屏 -->
         <meta-data
             android:name="android.max_aspect"

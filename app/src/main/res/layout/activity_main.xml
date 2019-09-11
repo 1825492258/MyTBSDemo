@@ -60,4 +60,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CoordinatorLayout" />
+    <Button
+        android:id="@+id/btnBarThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图片状态栏和彩色状态栏" />
 </LinearLayout>
