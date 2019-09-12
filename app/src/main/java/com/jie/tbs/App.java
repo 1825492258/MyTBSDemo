@@ -2,10 +2,8 @@ package com.jie.tbs;
 
 import android.app.Application;
 import android.util.Log;
-
 import com.tencent.smtt.sdk.QbSdk;
 import com.zhouyou.http.EasyHttp;
-import com.zhouyou.http.cache.converter.SerializableDiskConverter;
 import com.zhouyou.http.cache.model.CacheMode;
 
 /**

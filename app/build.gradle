@@ -48,4 +48,6 @@ dependencies {
 
     // 基础依赖包，必须要依赖
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.3.1'
 }

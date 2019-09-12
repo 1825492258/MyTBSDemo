@@ -65,4 +65,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="图片状态栏和彩色状态栏" />
+
+    <Button
+        android:id="@+id/btnText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="微信支付" />
 </LinearLayout>
