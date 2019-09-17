@@ -17,9 +17,9 @@ import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 
-public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
+public class TextWXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 
-    private static final String TAG = "MicroMsg.SDKSample.WXPayEntryActivity";
+    private static final String TAG = "MicroMsg.SDKSample.TextWXPayEntryActivity";
 
     //private IWXAPI api;
     // APP_ID 替换为你的应用从官方网站申请到的合法appId
@@ -29,7 +29,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // setContentView(R.layout.pay_result);
-
+        Log.i("jiejie", "微信支付回调>>>>>00000");
         //api = WXAPIFactory.createWXAPI(this, APP_ID);
         // api.handleIntent(getIntent(), this);
         if (WXPay.getInstance() != null) {
@@ -51,6 +51,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 
     @Override
     public void onReq(BaseReq req) {
+        Log.i("jiejie", "微信支付回调>>>>>111111");
     }
 
     @Override
