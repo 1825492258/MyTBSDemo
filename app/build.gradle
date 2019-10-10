@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "cn.phoenix.ibank"
+        applicationId "com.sevenstar.ionicfenghuang"
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
@@ -18,10 +18,23 @@ android {
     }
     signingConfigs {
         release {
-            keyAlias 'key'
-            keyPassword '123456'
-            storeFile file("stock/key.jks")
-            storePassword '123456'
+            keyAlias 'fenghuang.keystore'
+            keyPassword 'zhangyang'
+            storeFile file("keystore/fhzc.keystore")
+            storePassword 'zhangyang'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 

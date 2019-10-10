@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private IWXAPI api;
+    private String tex = "{\"package\":\"Sign=WXPay\",\"appid\":\"wxc61a028d110e11ad\",\"sign\":\"F90D62EC4BA400DAC454D42F3706E3A4\",\"partnerid\":\"1552499791\",\"prepayid\":\"wx2614191032551694ade5e09f1841966400\",\"noncestr\":\"Y02N2HaYcf82iqtG\",\"timestamp\":\"1569478750\"}";
     private String ji = "{\"appid\":\"wxc61a028d110e11ad\",\"noncestr\":\"wfCMPLnyhtWo1fj5\",\"package\":\"Sign\\u003dWXPay\",\"partnerid\":\"1552499791\",\"prepayid\":\"wx1717272156437583ca728d991892077900\",\"sign\":\"5C26063F4ED3E4DE00DA540C7CAF5551\",\"timestamp\":\"1568712441\"}";
     private String te  = "{\"appid\":\"wxc61a028d110e11ad\",\"noncestr\":\"ukrnWA1rs8qCGzWg\",\"package\":\"Sign\\u003dWXPay\",\"partnerid\":\"1552499791\",\"prepayid\":\"wx17161755698299aeca8648f81773865100\",\"sign\":\"9670AE31BE25C418DA5D72224DE3CD14\",\"timestamp\":\"1568708275\"}";
     private String text = "{\"appid\":\"wxc61a028d110e11ad\",\"noncestr\":\"0029842353cb4aebb7a3fc6aeb13e91d\",\"package\":\"Sign\\u003dWXPay\",\"partnerid\":\"1552499791\",\"prepayid\":\"wx171410333546964ca94e5d891449511300\",\"sign\":\"D4F748AE9D6901F8D39553E4F36336BD\",\"timestamp\":\"1568700633\"}";
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void doPay() {
         try {
-            JSONObject json = new JSONObject(ji);
+            JSONObject json = new JSONObject(tex);
             if (!json.has("retcode")) {
                 PayReq req = new PayReq();
                 //req.appId = "wxf8b4f85f3a794e77";  // 测试用appId
